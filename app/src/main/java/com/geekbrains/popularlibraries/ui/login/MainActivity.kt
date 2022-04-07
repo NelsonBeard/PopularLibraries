@@ -1,4 +1,4 @@
-package com.geekbrains.popularlibraries
+package com.geekbrains.popularlibraries.ui.login
 
 import android.app.Activity
 import android.graphics.Color
@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.geekbrains.popularlibraries.app
 import com.geekbrains.popularlibraries.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), Contract.View {
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity(), Contract.View {
 
     private fun restorePresenter(): Presenter {
         val presenter = lastCustomNonConfigurationInstance as? Presenter
-        return presenter ?: Presenter()
+        return presenter ?: Presenter(app.loginUsecase)
     }
 
     override fun onRetainCustomNonConfigurationInstance(): Any? {
@@ -87,5 +88,4 @@ class MainActivity : AppCompatActivity(), Contract.View {
         }
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
-
 }
