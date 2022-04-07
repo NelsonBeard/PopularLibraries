@@ -1,4 +1,4 @@
-package com.geekbrains.popularlibraries.view
+package com.geekbrains.popularlibraries
 
 import android.app.Activity
 import android.graphics.Color
@@ -8,9 +8,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.geekbrains.popularlibraries.Contract
 import com.geekbrains.popularlibraries.databinding.ActivityMainBinding
-import com.geekbrains.popularlibraries.presenter.Presenter
 
 class MainActivity : AppCompatActivity(), Contract.View {
     private lateinit var binding: ActivityMainBinding

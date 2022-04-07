@@ -1,9 +1,7 @@
-package com.geekbrains.popularlibraries.presenter
+package com.geekbrains.popularlibraries
 
 import android.os.Handler
 import android.os.Looper
-import com.geekbrains.popularlibraries.Contract
-import com.geekbrains.popularlibraries.model.PASSWORD
 
 
 class Presenter : Contract.Presenter {
