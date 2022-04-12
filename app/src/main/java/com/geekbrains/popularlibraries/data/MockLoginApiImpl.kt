@@ -3,17 +3,18 @@ package com.geekbrains.popularlibraries.data
 import com.geekbrains.popularlibraries.domain.LoginApi
 
 val PASSWORD = "123456"
-var errorText: String = ""
+var errorMessage: String = ""
 
 class MockLoginApiImpl : LoginApi {
     override fun login(login: String, password: String): Boolean {
+        Thread.sleep(1000)
         if (login == "") {
-            errorText = "Введите логин"
+            errorMessage = "Введите логин"
             return false
         } else if (password == PASSWORD) {
             return true
         }
-        errorText = "Неверный пароль"
+        errorMessage = "Неверный пароль"
         return false
     }
 
