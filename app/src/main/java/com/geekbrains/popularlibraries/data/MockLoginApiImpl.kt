@@ -2,7 +2,7 @@ package com.geekbrains.popularlibraries.data
 
 import com.geekbrains.popularlibraries.domain.LoginApi
 
-val PASSWORD = "123456"
+const val PASSWORD = "123456"
 var errorText: String = ""
 
 class MockLoginApiImpl : LoginApi {

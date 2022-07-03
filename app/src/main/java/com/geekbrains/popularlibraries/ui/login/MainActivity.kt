@@ -8,7 +8,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.geekbrains.popularlibraries.app
+import com.geekbrains.popularlibraries.data.MockLoginApiImpl
 import com.geekbrains.popularlibraries.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), Contract.View {
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), Contract.View {
 
     private fun restorePresenter(): Presenter {
         val presenter = lastCustomNonConfigurationInstance as? Presenter
-        return presenter ?: Presenter(app.loginUsecase)
+        return presenter ?: Presenter(MockLoginApiImpl())
     }
 
     override fun onRetainCustomNonConfigurationInstance(): Any? {
