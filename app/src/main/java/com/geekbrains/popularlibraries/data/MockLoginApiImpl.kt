@@ -2,19 +2,18 @@ package com.geekbrains.popularlibraries.data
 
 import com.geekbrains.popularlibraries.domain.LoginApi
 
-val PASSWORD = "123456"
-var errorMessage: String = ""
+const val PASSWORD = "123456"
+var errorText: String = ""
 
 class MockLoginApiImpl : LoginApi {
     override fun login(login: String, password: String): Boolean {
-        Thread.sleep(1000)
         if (login == "") {
-            errorMessage = "Введите логин"
+            errorText = "Введите логин"
             return false
         } else if (password == PASSWORD) {
             return true
         }
-        errorMessage = "Неверный пароль"
+        errorText = "Неверный пароль"
         return false
     }
 
